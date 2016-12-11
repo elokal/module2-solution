@@ -1,0 +1,94 @@
+/* browser window is 992px and above. 
+Tablet view should appear only if the width of the browser window is between 768px and 991px, inclusively. 
+Mobile view should appear only if the width of the browser is equal to or less than 767px
+
+Layout: In the desktop view (992px and above), each of the 3 sections should take up equal amount of space on the screen. As you make the browser window wider or narrower, each section should become wider or narrower. (Hint: use percentages to define width and use the 'float' property. See Lecture 24). For a visual reference of this view, see the desktop mockup illustration below.
+
+Layout: In the tablet view (between 768px and 991px, inclusively), the first 2 sections should be in the first row and be of equal size. The 3rd section should be in the second row and take up the entire row by itself. For a visual reference of this view, see the tablet mockup illustration below.
+
+Layout: In the mobile view (equal to or less than 767px), each section should take up the entire row. For a visual reference of this view, see the mobile mockup illustration below.
+*/
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+
+
+}
+
+.row {
+	width: 100%;
+	}
+
+.row div{
+	position: relative;
+	background: #B7E1CD;
+	border: 1px solid black;
+	margin:2px;
+	font-family: 'Roboto', sans-serif;
+
+
+}
+@media (min-width: 992px) {
+	.col-lg-1,.col-lg-2, .col-lg-3 
+	{
+		float:left;
+	}
+	.col-lg-1 {
+		width: calc(33.33% - 4px);
+
+	}
+	.col-lg-2 {
+		width: calc(66.66% - 4px);
+
+	}
+	.col-lg-3 {
+		width: calc(100% - 4px);
+	}
+} 
+@media (min-width: 768px) and (max-width: 992px) {
+	.col-md-1, .col-md-2, .col-md-3 
+	{
+		float:left;
+	}
+	.col-md-1 {
+		width: calc(33.33% - 4px);
+	
+	}
+	.col-md-2 {
+		width: calc(50% - 4px);
+	}
+	.col-md-3 {
+		width: calc(100% - 4px);
+	}
+}
+
+h1 {
+	text-align: center;
+	color: #616161;
+	font-family: 'Oswald', sans-serif;
+}
+
+div h2 {
+	border: 1px solid black;
+	float:right;
+	width:33.33%;
+	background: #4285F4;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+#sushi {
+	background-color: #DB4437;
+}
+#beef {
+	background-color: #0F9D58;
+}
+#chicken {
+	background-color: #4285F4;
+}
+
+div p {
+	margin: 5px;
+	clear:both;
+}
